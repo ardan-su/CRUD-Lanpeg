@@ -1,0 +1,6 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/bizpromy/domains/api-alfidaanew.bizpro.my.id/public_html"
+PassengerBaseURI "/"
+PassengerPython "/home/bizpromy/virtualenv/domains/api-alfidaanew.bizpro.my.id/public_html/3.9/bin/python"
+PassengerAppLogFile "/home/bizpromy/domains/api-alfidaanew.bizpro.my.id/public_html/error.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END

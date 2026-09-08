@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>SMK PKP 1 JIS</title>
+    
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SMK PKP 1 Jakarta Islamic School — Sekolah Menengah Kejuruan Islam unggulan di Jakarta. Mencetak generasi muda berakhlak mulia, kompeten, dan berdaya saing global.">
+    <meta name="keywords" content="SMK PKP 1 Jakarta, Jakarta Islamic School, sekolah islam jakarta, smk islam, pkp jakarta, sekolah kejuruan islam, pendidikan islam jakarta">
+    <meta name="author" content="SMK PKP 1 Jakarta Islamic School">
+    <link rel="canonical" href="http://localhost:3000/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:3000/">
+    <meta property="og:title" content="SMK PKP 1 Jakarta Islamic School">
+    <meta property="og:description" content="Sekolah Menengah Kejuruan Islam unggulan di Jakarta. Mencetak generasi muda berakhlak mulia, kompeten, dan berdaya saing global.">
+    <meta property="og:image" content="http://localhost:5001/public/uploads/1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:3000/">
+    <meta property="twitter:title" content="SMK PKP 1 Jakarta Islamic School">
+    <meta property="twitter:description" content="Sekolah Menengah Kejuruan Islam unggulan di Jakarta. Mencetak generasi muda berakhlak mulia, kompeten, dan berdaya saing global.">
+    <meta property="twitter:image" content="http://localhost:5001/public/uploads/1.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Quill Text Editor CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <style>
+      /* ── Scroll-triggered section animations ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-32px);
+        transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
+      }
+      .reveal-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(32px);
+        transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
+      }
+      .reveal-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      /* ── Header transparent → solid transition ── */
+      #site-header {
+        transition: background-color 0.35s cubic-bezier(.4,0,.2,1),
+                    box-shadow 0.35s cubic-bezier(.4,0,.2,1),
+                    padding 0.3s ease;
+      }
+      /* ── Gold underline decoration ── */
+      .gold-underline {
+        position: relative;
+        display: inline-block;
+      }
+      .gold-underline::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 48px;
+        height: 3px;
+        background: #DB9F00;
+        border-radius: 9999px;
+      }
+      /* ── Card hover lift ── */
+      .card-lift {
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+      }
+      .card-lift:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 48px 0 rgba(8,48,188,0.14);
+      }
+      /* ── Gradient text ── */
+      .text-gradient {
+        background: linear-gradient(135deg, #0830BC 0%, #397DE8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      /* ── Line clamp ── */
+      .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              /* ─── Design Tokens ───────────────────────────────────
+               *  primary      : Deep Blue   #0830BC — brand / interactive
+               *  secondary    : Sky Blue    #397DE8 — hover / gradient / accent ui
+               *  accent       : Gold        #DB9F00 — CTA / highlight / badge
+               *  silk         : Silk White          — base background
+               *  neutral-*    : greys for text, borders, surfaces
+               * ──────────────────────────────────────────────────── */
+              primary:         '#0830BC',
+              'primary-dark':  '#061F8A',
+              'primary-light': '#EEF2FF',
+              secondary:       '#397DE8',
+              'secondary-dark':'#2563C8',
+              'secondary-light':'#DBEAFE',
+              accent:          '#DB9F00',
+              'accent-dark':   '#B07E00',
+              'accent-light':  '#FEF3C7',
+              silk:            '#F8FAFB',
+              'neutral-900':   '#1A2332',
+              'neutral-800':   '#2D3748',
+              'neutral-700':   '#4A5568',
+              'neutral-600':   '#718096',
+              'neutral-400':   '#A0AEC0',
+              'neutral-200':   '#E2E8F0',
+              'neutral-100':   '#F7F8FA',
+            },
+            fontFamily: {
+              heading: ['Poppins', 'sans-serif'],
+              body:    ['Poppins', 'sans-serif'],
+            },
+            boxShadow: {
+              card:        '0 4px 24px 0 rgba(8,48,188,0.07)',
+              'card-hover':'0 16px 48px 0 rgba(8,48,188,0.15)',
+              'blue-glow': '0 0 32px 0 rgba(8,48,188,0.20)',
+              'gold-glow': '0 0 24px 0 rgba(219,159,0,0.25)',
+            },
+            borderRadius: {
+              xl2: '1rem',
+              xl3: '1.5rem',
+            },
+            backgroundImage: {
+              'hero-gradient':    'linear-gradient(135deg, #0830BC 0%, #397DE8 100%)',
+              'blue-gradient':    'linear-gradient(135deg, #0830BC 0%, #1a4fd8 50%, #397DE8 100%)',
+              'section-gradient': 'linear-gradient(180deg, #EEF2FF 0%, #F8FAFB 100%)',
+            },
+          }
+        }
+      }
+    </script>
+    
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "SMK PKP 1 Jakarta Islamic School",
+      "url": "http://localhost:3000/",
+      "logo": "http://localhost:5001/public/img/logo.png",
+      "description": "Sekolah Menengah Kejuruan Islam unggulan di Jakarta. Mencetak generasi muda berakhlak mulia, kompeten, dan berdaya saing global.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "[Nomor Telepon]",
+        "contactType": "customer service"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jakarta",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.28.0?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.363.0?deps=react@18.3.1",
+    "react-quill": "https://esm.sh/react-quill@2.0.0?deps=react@18.3.1,react-dom@18.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-neutral-900 font-body antialiased">
+    <div id="root"></div>
+  <script>
+    (function () {
+      if (window.location.hash && window.location.hash.indexOf('#/') === 0) {
+        var route = window.location.hash.slice(1);
+        window.history.replaceState(null, '', route);
+      }
+    })();
+  </script>
+  <script>
+    // Intersection Observer for reveal animations
+    (function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      function observeAll () {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function (el) {
+          observer.observe(el);
+        });
+      }
+
+      // Run after React mounts (small delay to let React render)
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(observeAll, 300); });
+      } else {
+        setTimeout(observeAll, 300);
+      }
+
+      // Re-observe on route changes (SPA navigation)
+      var lastHref = location.href;
+      setInterval(function () {
+        if (location.href !== lastHref) {
+          lastHref = location.href;
+          setTimeout(observeAll, 400);
+        }
+      }, 400);
+    })();
+  </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

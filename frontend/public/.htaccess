@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Social crawlers need server-rendered meta tags because they do not read React updates.
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot|Twitterbot|WhatsApp|TelegramBot|LinkedInBot|Slackbot|Discordbot) [NC]
+RewriteRule ^informasi/(berita|majalah|kolom-guru|kolom-siswa|kolom-alumni)/([^/?]+)$ https://api-alfidaanew.bizpro.my.id/share/informasi/$1/$2 [R=302,L,NE]
+
+# BrowserRouter fallback for direct visits to clean SPA URLs.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
